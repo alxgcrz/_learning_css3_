@@ -485,7 +485,195 @@ a[href*="w3schools"] {
 }
 ```
 
-El selector `[]`
+[Más información en w3schools.com](https://www.w3schools.com/css/css_attribute_selectors.asp)
+
+### Selector de pseudo-clase
+
+Las pseudo-clases permiten apuntar a elementos que no son accesibles con los selectores clásicos y que toman un **estado particular**, como por ejemplo los enlaces visitados.
+
+En lo que respecta a la sintaxis, una pseudo-clase empieza siempre por `:` y va seguida del nombre de la pseudo-clase.
+
+```css
+selector:pseudo-class {
+  property: value;
+}
+```
+
+Las pseudoclases se pueden combinar con clases HTMl, por ejemplo:
+
+```css
+/* Sólo aplica al elemento <a class="highlight"> y no al resto de <a>*/ 
+a.highlight:hover {
+  color: #ff0000;
+}
+```
+
+[Más información en w3schools.com](https://www.w3schools.com/css/css_pseudo_classes.asp)
+
+#### Pseudo-clases de enlaces
+
+- [:link](https://www.w3schools.com/cssref/sel_link.asp): selecciona los enlaces no visitados
+
+- [:visited](https://www.w3schools.com/cssref/sel_visited.asp): selecciona los enlaces visitados (por razones de seguridad los navegadores sólo aceptan algunos formatos CSS)
+
+#### Pseudo-clase de acciones del usuario
+
+- [:hover](https://www.w3schools.com/cssref/sel_hover.asp): cuando se pasa el ratón por encima
+
+- [:active](https://www.w3schools.com/cssref/sel_active.asp): cuando el usuario activa un elemento
+
+- [:focus](https://www.w3schools.com/cssref/sel_focus.asp): cuando el elemento obtiene el "foco"
+
+#### Pseudo-clase de ancla
+
+- [:target](https://www.w3schools.com/cssref/sel_focus.asp): seleccionar el destino del enlace
+
+#### Pseudo-clase de idioma
+
+- [:lang(language)](https://www.w3schools.com/cssref/sel_lang.asp): selecciona el elemento con el atributo "lang" y el valor indicado
+
+#### Pseudo-clase de estado
+
+- [:enabled](https://www.w3schools.com/cssref/sel_enabled.asp): selecciona los elementos con el estado activado
+
+- [:disabled](https://www.w3schools.com/cssref/sel_disabled.asp): selecciona los elementos con el estado desactivado
+
+- [:checked](https://www.w3schools.com/cssref/sel_checked.asp): selecciona los elementos seleccionados
+
+- [:optional](https://www.w3schools.com/cssref/sel_optional.asp): selecciona los elementos sin el atributo "required"
+
+- [:valid](https://www.w3schools.com/cssref/sel_valid.asp): cuando tiene un valor válido
+
+- [:invalid](https://www.w3schools.com/cssref/sel_invalid.asp): cuando tiene un valor no válido
+
+- [:in-range](https://www.w3schools.com/cssref/sel_in-range.asp): cuando el elemento tiene un valor dentro del rango
+
+- [:out-range](https://www.w3schools.com/cssref/sel_out-of-range.asp): cuando el elemento tiene un valor fuera del rango
+
+- [:placeholder](https://www.w3schools.com/cssref/sel_placeholder.php): selecciona los elementos con el atributo "placeholder"
+
+- [:read-only](https://www.w3schools.com/cssref/sel_read-only.php): selecciona los elementos con el atributo "readonly"
+
+- [:read-write](https://www.w3schools.com/cssref/sel_read-write.php): selecciona los elementos sin el atributo "readonly"
+
+#### Pseudo-clase de estructura
+
+- [:root](https://www.w3schools.com/cssref/sel_root.asp): selecciona la raíz del documento web (`:root` > `html`)
+
+- [:first-child](https://www.w3schools.com/cssref/sel_firstchild.asp): selecciona el primer hijo del elemento padre
+
+- [:last-child](https://www.w3schools.com/cssref/sel_last-child.asp): selecciona el último hijo del elemento padre
+
+- [:nth-child(n)](https://www.w3schools.com/cssref/sel_nth-child.php)
+
+- [:nth-last-child(n)](https://www.w3schools.com/cssref/sel_nth-last-child.php)
+
+- [:first-of-type](https://www.w3schools.com/cssref/sel_first-of-type.php)
+
+- [:last-of-type](https://www.w3schools.com/cssref/sel_last-of-type.php)
+
+- [:nth-of-type(n)](https://www.w3schools.com/cssref/sel_nth-of-type.php)
+
+- [:nth-last-of-type(n)](https://www.w3schools.com/cssref/sel_nth-last-of-type.asp)
+
+- [:only-child](https://www.w3schools.com/cssref/sel_only-child.asp)
+
+- [:only-of-type](https://www.w3schools.com/cssref/sel_only-of-type.asp)
+
+- [:empty](https://www.w3schools.com/cssref/sel_empty.asp)
+
+- [:not(selector)](https://www.w3schools.com/cssref/sel_not.asp)
+
+### Selector de pseudo-elemento
+
+Los pseudo-elementos se utilizan para seleccionar una parte del elemento, como por ejemplo la primera letra o la primera linea, etcétera...
+
+En lo que respecta a la sintaxis, un pseudo-elemento empieza siempre por `::` y va seguida del nombre del pseudo-elemento:
+
+```css
+selector::pseudo-element {
+  property: value;
+}
+```
+
+:warning: La notación con doble `::` fue introducida por W3C para CSS3. En CSS1 y CSS2 se utiliza la misma notación `:` que para las pseudo-clases.
+**Por compatibilidad se puede utilizar las dos notaciones**.
+
+- [::after](https://www.w3schools.com/cssref/sel_after.asp): insertar contenido después con `content`
+
+- [::before](https://www.w3schools.com/cssref/sel_before.asp): insertar contenido antes con `content`
+
+- [:first-letter](https://www.w3schools.com/cssref/sel_firstletter.asp): seleccionar la primera letra
+
+- [::first-line](https://www.w3schools.com/cssref/sel_firstline.asp): seleccionar la primera línea
+
+- [::marker](https://www.w3schools.com/cssref/sel_marker.asp): selecciona el "marker" de una lista de items
+
+- [::selection](https://www.w3schools.com/cssref/sel_selection.asp): selecciona el texto seleccionado por el usuario con el ratón
+
+[Más información en w3schools.com](https://www.w3schools.com/css/css_pseudo_elements.asp)
+
+### Combinación de selectores
+
+Con la combinación de selectores simples se puede explicar la relación entre selectores.
+
+[Más información en w3schools.com](https://www.w3schools.com/css/css_combinators.asp)
+
+#### Combinación descendente
+
+Permite seleccionar todos los elementos HTML que son descendientes del primer elemento HTML indicado por el selector, independientemente del nivel de profundidad.
+
+Esta combinación se establece con un espacio entre los selectores.
+
+En este ejemplo se seleccionan todos los elementos `<p>` descendientes de `<div>`, sin importar si son hijos directos o son hijos de otras etiquetas:
+
+```css
+div p {
+  background-color: yellow;
+}
+```
+
+#### Combinación de hijos
+
+Permite seleccionar los elementos HTML que son hijos directos del primer elemento HTML indicado por el selector.
+
+Esta combinación se establece con el símbolo `>` entre los selectores.
+
+En este ejemplo se seleccionan todos los elementos `<p>` que son hijos directos de `<div>`:
+
+```css
+div > p {
+  background-color: yellow;
+}
+```
+
+#### Combinación de hermanos adjacentes
+
+Esta combinación permite seleccionar un elemento HTML que sigue inmediatamente a otro elemento HTML, es decir, que son "hermanos", lo cual significa que están al mismo nivel.
+
+Esta combinación se establece son el signo `+` entre los selectores.
+
+Esn este ejemplo se selecciona el primer elemento `<p>` que es hermano de la etiqueta `<div>` y por tanto están al mismo nivel:
+
+```css
+div + p {
+  background-color: yellow;
+}
+```
+
+#### Combinación de hermanos
+
+Esta combinación permite seleccionar todos los elementos HTML que son "hermanos" de otro elemento HTML, sin importar si va a continuación.
+
+Esta combinación se establece con el caracter "virgulilla" `~` entre los selectores.
+
+Esn este ejemplo se seleccionan todos los elementos `<p>` que son hermanos de la etiqueta `<div>`:
+
+```css
+div ~ p {
+  background-color: yellow;
+}
+```
 
 ---
 
