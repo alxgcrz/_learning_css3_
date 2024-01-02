@@ -12,7 +12,9 @@ Anteriormente, el desarrollo de varias partes de la especificación CSS se hizo 
 
 Las especificaciones de CSS se encuentran en [W3C specifications](https://www.w3.org/Style/CSS/#specs).
 
-## Integrar CSS
+El documento base oficial de [CSS en W3C](https://www.w3.org/TR/CSS/#css-official).
+
+## Integración de estilos CSS
 
 ### Estilos integrados en un elemento HTML
 
@@ -85,6 +87,126 @@ También se puede utilizar dentro de un documento HTML aunque por rendimiento es
 </html>
 ```
 
+## Aplicación de los estilos CSS
+
+[Más información en el sitio oficial del W3C](https://www.w3.org/TR/css-cascade-3/)
+
+### Noción de herencia
+
+En la aplicación de los estilos, la noción de herencia es importante cuando existen elementos anidados.
+
+La regla de la herencia indica que los elementos hijos **pueden heredar** propiedades del elemento padre.
+
+Algunas propiedades de estilo en CSS se heredan de forma predeterminada, mientras que otras no. Las propiedades que se heredan son aquellas que afectan la apariencia del texto y algunas propiedades relacionadas con el modelo de caja.
+
+Algunos ejemplos de propiedades heredadas son `font-family`, `color`, `font-size`, `line-height` o `text-align`.
+
+Por otro lado, algunas propiedades no se heredan de forma predeterminada, como por ejemplo `border`, `margin`, `padding`, `width` o `height`.
+
+```css
+/* Estilo para el elemento padre */
+.padre {
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+/* Los elementos hijos heredan los estilos del elemento padre */
+.padre .hijo {
+  font-size: 16px;
+  line-height: 1.5;
+}
+```
+
+### Noción de cascada
+
+Cuando existe un conflicto de aplicación de reglas, es decir, que tenemos varias reglas que afectan a un mismo elemento HTML, se aplica el concepto de **cascada** (sin olvidar que CSS es el acrónimo de _**"Cascading Style Sheets"**_).
+
+El orden de prioridad de las reglas es el siguiente, de **mayor a menor prioridad**:
+
+1. Reglas en línea (dentro del elemento HTML)
+
+2. Reglas en la cabecera del documento (dentro de la sección `<head>`)
+
+3. Reglas en un fichero externo css
+
+4. Reglas CSS por defecto aplicadas por el navegador
+
+En el caso de que haya diferentes reglas CSS que apliquen con el mismo nivel de prioridad, como por ejemplo dentro del mismo fichero css, tendrá más prioridad **la última regla definida** ya que sobreescribe al resto.
+
+### Cálculo de la especificidad
+
+La **especificidad** en CSS es un concepto que determina qué conjunto de reglas se aplicará a un elemento en caso de que haya conflictos.
+
+La especificidad se calcula asignando valores a los selectores utilizados en las reglas CSS.
+
+Cuanto más específico es un selector, mayor es su especificidad y más peso tiene sobre otras reglas que puedan aplicarse al mismo elemento.
+
+La especificidad se mide en cuatro niveles, de menor a mayor:
+
+1. **Especificidad de elemento**: Es el nivel más bajo y se refiere a los selectores de elementos. **Su valor es 1**.
+
+1. **Especificidad de clase o pseudoclase**: Se refiere a los selectores de clase, pseudoclases y atributos. **Su valor es 10**.
+
+1. **Especificidad de ID**: Se refiere a los selectores de ID. **Su valor es 100**.
+
+1. **Especificidad de estilo en línea**: Es el nivel más alto y se refiere a las reglas de estilo en línea directamente en el elemento. **Su valor es 1000**.
+
+Para el cálculo de la especificidad se tiene en cuenta la suma de todos los selectores de la regla:
+
+```css
+/* Tiene una especificidad de 1 (por elemento) */
+p {
+  color: black;
+}
+
+/* Tiene una especificidad de 11 (1 por elemento + 10 por clase) */
+p.test {
+  color: black;
+}
+
+/* Tiene una especificidad de 21 (1 por elemento + 10 por clase + 10 por clase) */
+p.test1.test2 {
+  color: black;
+}
+
+/* Tiene una especificidad de 100 (por identificador) */
+#demo {
+  color: black;
+}
+
+/* Tiene una especificidad de 101 (100 por identificador + 1 por clase) */
+p#demo {
+  color: black;
+}
+```
+
+[Más información en w3schools.com](https://www.w3schools.com/css/css_specificity.asp)
+
+### Noción de importancia
+
+Cuando aplican las reglas CSS, intervienen el concepto de herencia y el cálculo de especificidad.
+
+Sin embargo, es posible ignorar el orden de prioridad marcando una regla CSS como `!important`.
+
+De hecho, al utilizar la regla `!important`, anulará TODAS las reglas de estilo anteriores para esa propiedad específica en ese elemento.
+
+```css
+#myid {
+  background-color: blue;
+}
+
+.myclass {
+  background-color: gray;
+}
+
+/* Todos los parráfos '<p>' tendrán fondo rojo, aunque tengan la clase o ID anteriores */
+p {
+  background-color: red !important;
+}
+```
+
+[Más información en w3schools.com](https://www.w3schools.com/css/css_important.asp)
+
 ## Estructura de una regla de estilo
 
 Un estilo CSS se contruye con una **regla** que consta de un **selector** y una **declaración**.
@@ -154,7 +276,7 @@ Hay propiedades que pueden utilizar tres valores textuales:
 
 - **unset**: especifica que el valor será _"inherit"_ en aquellas propiedades que sean heredables como `color` o el valor será _"initial"_ para aquellas propiedades que no sean heredables como `border`.
 
-[Más información en el sitio oficila del W3C](https://www.w3.org/TR/css3-values/)
+[Más información en el sitio oficial del W3C](https://www.w3.org/TR/css3-values/)
 
 ### Valores numéricos
 
