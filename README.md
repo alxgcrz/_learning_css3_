@@ -797,6 +797,91 @@ div ~ p {
 }
 ```
 
+## Estilos para los tipos de letra
+
+Elegir una fuente correcta es importante por diversos motivos como la legibilidad del sitio web, su identidad, etcétera..
+
+Sin embargo, no todas las fuentes están instaladas en los navegadores ni en los sistemas operativos.
+
+Hay 5 grandes familias de tipos de letra:
+
+- **Serif**: las fuentes tienen como protuberancias o _serifa_ en los bordes de cada letra. Crean una sensación de formalidad y elegancia.
+  - Times New Roman
+  - Georgia
+  - Garamond
+
+- **Sans-serif**: las fuentes tienen líneas limpias (no hay protuberancias). Crean una mirada moderna y minimalista.
+  - Arial
+  - Verdana
+  - Helvetica
+
+- **Monoespaciadas**: todas las letras tienen el mismo ancho fijo. Crean una mirada mecánica.
+  - Courier New
+  - Lucida Console
+  - Monaco
+
+- **Cursiva**: fuentes que imitan la letra humana.
+  - Brush Script MT
+  - Lucida Handwriting
+
+- **Fantasia**: fuentes decorativas
+  - Copperplate
+  - Papyrus
+
+[Más información en el sitio oficial del W3C](https://www.w3.org/TR/css-fonts-3/)
+
+Las fuentes se declaran con `font-family`.
+
+No se distingue entre mayúsculas ni minúsculas en el nombre de las fuentes. Además, si el nombre es compuesto, se utiliza las comillas, como por ejemplo "Times New Roman".
+
+```css
+.p1 {
+  font-family: "Times New Roman", Times, serif;
+}
+
+.p2 {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.p3 {
+  font-family: "Lucida Console", "Courier New", monospace;
+}
+```
+
+El motivo de definir una lista es que el navegador utilizará la primera fuente de la lista que esté disponible ya que no todas las fuentes son comunes a todos los navegadores ni sistemas operativos.
+
+Como recomedación la última de la lista se indica una familia genérica. De esta forma, el navegador, en última instancia, utilizará la fuente que tenga de esa familia.
+
+[Más información en w3schools.com](https://www.w3schools.com/css/css_font.asp)
+
+Para incorporar fuentes de letra externas se puede hacer con `@import` o directamente con `<link>` dentro de `<head>`:
+
+```html
+<head>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Trirong">
+<style>
+@import url('https://fonts.googleapis.com/css?family=Audiowide');
+body {
+  font-family: "Trirong", "Audiowide", serif;
+}
+</style>
+</head>
+```
+
+Por recomendación del W3C, los párrafos tienen un tamaño por defecto de **1em o 16px**. Para el `<h1>` es de **2em** mientras que para el `<h6>` es de **0,75em**. Cada navegador es libre de utilizar la recomendación.
+
+---
+
+... EN DESARROLLO ...
+
+<!-- markdownlint-disable MD033 -->
+<p align="center">
+  <a href="https://alxgcrz.com" target="_blank">
+    <img src="https://alxgcrz.com/assets/COVER05.png" alt="En desarrollo" title="En desarrollo" width="40%">
+  </a>
+</p>
+<!-- markdownlint-enable MD033 -->
+
 ---
 
 ## Enlaces de interés
