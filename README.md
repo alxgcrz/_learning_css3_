@@ -1,5 +1,7 @@
 # CSS3
 
+... EN DESARROLLO ...
+
 ## Introducción a CSS
 
 CSS es el acrónimo de _**"Cascading Style Sheets"**_, que significa **Hojas de Estilo en Cascada**. Es el lenguaje utilizado para dar estilo y formato a un documento HTML. CSS describe como los elementos deben renderizarse en una pantalla, en un hoja impresa o cualquier otro medio.
@@ -872,19 +874,7 @@ Por recomendación del W3C, los párrafos tienen un tamaño por defecto de **1em
 
 ---
 
-... EN DESARROLLO ...
-
-<!-- markdownlint-disable MD033 -->
-<p align="center">
-  <a href="https://alxgcrz.com" target="_blank">
-    <img src="https://alxgcrz.com/assets/COVER05.png" alt="En desarrollo" title="En desarrollo" width="40%">
-  </a>
-</p>
-<!-- markdownlint-enable MD033 -->
-
----
-
-## Enlaces de interés
+## Referencias
 
 - <https://www.w3.org/Style/CSS/>
 - <https://www.w3.org/Style/CSS/specs.en.html>
@@ -901,6 +891,7 @@ Por recomendación del W3C, los párrafos tienen un tamaño por defecto de **1em
 - <https://www.theodinproject.com/>
 - <https://roadmap.sh/frontend>
 - <https://jsfiddle.net>
+- <https://web.dev/learn/css?hl=es>
 
 ## Licencia
 
