@@ -1,6 +1,6 @@
 # CSS3
 
-... EN DESARROLLO ...
+> :warning: **DOCUMENTO EN DESARROLLO** :warning:
 
 ## Introducción a CSS
 
@@ -50,7 +50,7 @@ Las reglas CSS se definen en un documento HTML. Por tanto se aplican a **todo** 
 
 Las reglas CSS se definen en un **archivo CSS externo**. Estas reglas se podrán reutilizar en todos los documentos HTML que incluyan el archivo CSS.
 
-:warning: El atributo `type="text/css"` es opcional ya que el tipo de las hojas de estilo por defecto es CSS.
+> :warning: El atributo `type="text/css"` es opcional ya que el tipo de las hojas de estilo por defecto es CSS.
 
 ```html
 <!DOCTYPE html>
@@ -91,8 +91,6 @@ También se puede utilizar dentro de un documento HTML aunque por rendimiento es
 
 ## Aplicación de los estilos CSS
 
-[Más información en el sitio oficial del W3C](https://www.w3.org/TR/css-cascade-3/)
-
 ### Noción de herencia
 
 En la aplicación de los estilos, la noción de herencia es importante cuando existen elementos anidados.
@@ -119,6 +117,8 @@ Por otro lado, algunas propiedades no se heredan de forma predeterminada, como p
 }
 ```
 
+- [Más información](https://www.w3.org/TR/css-cascade-3/#inheriting)
+
 ### Noción de cascada
 
 Cuando existe un conflicto de aplicación de reglas, es decir, que tenemos varias reglas que afectan a un mismo elemento HTML, se aplica el concepto de **cascada** (sin olvidar que CSS es el acrónimo de _**"Cascading Style Sheets"**_).
@@ -134,6 +134,8 @@ El orden de prioridad de las reglas es el siguiente, de **mayor a menor priorida
 4. Reglas CSS por defecto aplicadas por el navegador
 
 En el caso de que haya diferentes reglas CSS que apliquen con el mismo nivel de prioridad, como por ejemplo dentro del mismo fichero css, tendrá más prioridad **la última regla definida** ya que sobreescribe al resto.
+
+- [Más información](https://www.w3.org/TR/css-cascade-3/#cascading)
 
 ### Cálculo de la especificidad
 
@@ -182,7 +184,7 @@ p#demo {
 }
 ```
 
-[Más información en w3schools.com](https://www.w3schools.com/css/css_specificity.asp)
+- [Más información en w3schools.com](https://www.w3schools.com/css/css_specificity.asp)
 
 ### Noción de importancia
 
@@ -207,7 +209,7 @@ p {
 }
 ```
 
-[Más información en w3schools.com](https://www.w3schools.com/css/css_important.asp)
+- [Más información en w3schools.com](https://www.w3schools.com/css/css_important.asp)
 
 ## Estructura de una regla de estilo
 
@@ -262,7 +264,7 @@ body {
 
 Hay muchas propiedades que utilizan valores numéricos como por ejemplo el tamaño de la fuente.
 
-:warning: Cuando un valor es 0 **no se indica la unidad** de medida aunque es válido y no genera error:
+> :warning: Cuando un valor es 0 **no se indica la unidad** de medida aunque es válido y no genera error.
 
 ```css
 body {
@@ -314,7 +316,7 @@ Para realizar los cálculos, el W3C ofrece la función `calc()`. Existen otras f
 }
 ```
 
-[Más información en css-tricks.com](https://css-tricks.com/a-complete-guide-to-calc-in-css/)
+- [Más información en css-tricks.com](https://css-tricks.com/a-complete-guide-to-calc-in-css/)
 
 ### Unidades de longitud
 
@@ -384,7 +386,7 @@ Existen varias posibilidades para utilizar los colores en CSS:
 
 En un inicio había únicamente 16 colores que se podían utilizar por nombre. Actualmente hay **140 colores** reconocidos por los navegadores.
 
-[Más información en w3schools.com](https://www.w3schools.com/css/css_colors.asp)
+- [Más información en w3schools.com](https://www.w3schools.com/css/css_colors.asp)
 
 ### Notación hexadecimal
 
@@ -396,7 +398,7 @@ Los valores van desde **00** hasta **FF** en hexadecimal (0-255 en decimal). Por
 
 Esta notación no es sensible a mayúsculas ni minúsculas. Además, en el caso de caracteres dobles puede introducirse uno solo. Por ejemplo `#00FF00` equivaldría a `#0F0`.
 
-[Más información en w3schools.com](https://www.w3schools.com/css/css_colors_hex.asp)
+- [Más información en w3schools.com](https://www.w3schools.com/css/css_colors_hex.asp)
 
 ### Notación RGB y RGBA
 
@@ -412,7 +414,7 @@ En la **notación RGBA** tenemos un cuarto componente que es la transparencia (d
 
 Este valor va desde 0 para indicar **total transparencia** hasta **1** para indicar **total opacidad**. Todos los valores intermedios se muestran en decimal. Por ejemplo, un rojo semitransparente sería `rgb(255, 0, 0, 0.5)`.
 
-[Más información en w3schools.com](https://www.w3schools.com/css/css_colors_rgb.asp)
+- [Más información en w3schools.com](https://www.w3schools.com/css/css_colors_rgb.asp)
 
 ### Notación HSL y HSLA
 
@@ -430,7 +432,7 @@ La luminosidad también es un porcentaje. Va desde el 0% para el negro (por lo t
 
 Se puede agregar el componente **transparencia** con la **notación HSLA**. El **0** indica transparencia mientras que el **1** indica opacidad. Todos los valores intermedios se muestran en decimal.
 
-[Más información en w3schools.com](https://www.w3schools.com/css/css_colors_hsl.asp)
+- [Más información en w3schools.com](https://www.w3schools.com/css/css_colors_hsl.asp)
 
 ## Selectores
 
@@ -480,7 +482,7 @@ p {
 
 El selector de clase permite seleccionar elementos HTML que tengan el mismo atributo de clase.
 
-:warning: El nombre de una clase **no puede empezar con un número**.
+> :warning: El nombre de una clase **no puede empezar con un número**.
 
 El nombre del selector empieza **siempre** por `.` seguido del nombre de la clase:
 
@@ -513,7 +515,7 @@ Un elemento HTML puede tener varias clases como atributo, por lo que se verá af
 
 Un selector de identificación permite crear un estilo que solo se aplicará a un **único elemento HTML** identificado gracias al valor de su atributo `id`. Esto es así debido a que cada identificador debe ser **único** en cada documento.
 
-:warning: El nombre usado como identificador **no puede empezar con un número**.
+> :warning: El nombre usado como identificador **no puede empezar con un número**.
 
 El nombre del selector empieza **siempre** por el carácter almohadilla `#` seguido del identificador:
 
@@ -609,7 +611,7 @@ a[href*="w3schools"] {
 }
 ```
 
-[Más información en w3schools.com](https://www.w3schools.com/css/css_attribute_selectors.asp)
+- [Más información en w3schools.com](https://www.w3schools.com/css/css_attribute_selectors.asp)
 
 ### Selector de pseudo-clase
 
@@ -632,7 +634,7 @@ a.highlight:hover {
 }
 ```
 
-[Más información en w3schools.com](https://www.w3schools.com/css/css_pseudo_classes.asp)
+- [Más información en w3schools.com](https://www.w3schools.com/css/css_pseudo_classes.asp)
 
 #### Pseudo-clases de enlaces
 
@@ -720,8 +722,7 @@ selector::pseudo-element {
 }
 ```
 
-:warning: La notación con doble `::` fue introducida por W3C para CSS3. En CSS1 y CSS2 se utiliza la misma notación `:` que para las pseudo-clases.
-**Por compatibilidad se puede utilizar las dos notaciones**.
+> :warning: La notación con doble `::` fue introducida por W3C para CSS3. En CSS1 y CSS2 se utiliza la misma notación `:` que para las pseudo-clases. **Por compatibilidad se puede utilizar las dos notaciones**.
 
 - [::after](https://www.w3schools.com/cssref/sel_after.asp): insertar contenido después con `content`
 
@@ -741,7 +742,7 @@ selector::pseudo-element {
 
 Con la combinación de selectores simples se puede explicar la relación entre selectores.
 
-[Más información en w3schools.com](https://www.w3schools.com/css/css_combinators.asp)
+- [Más información en w3schools.com](https://www.w3schools.com/css/css_combinators.asp)
 
 #### Combinación descendente
 
@@ -854,7 +855,7 @@ El motivo de definir una lista es que el navegador utilizará la primera fuente 
 
 Como recomedación la última de la lista se indica una familia genérica. De esta forma, el navegador, en última instancia, utilizará la fuente que tenga de esa familia.
 
-[Más información en w3schools.com](https://www.w3schools.com/css/css_font.asp)
+- [Más información en w3schools.com](https://www.w3schools.com/css/css_font.asp)
 
 Para incorporar fuentes de letra externas se puede hacer con `@import` o directamente con `<link>` dentro de `<head>`:
 
